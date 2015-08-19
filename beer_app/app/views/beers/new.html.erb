@@ -1,2 +1,54 @@
-<h1>Beers#new</h1>
-<p>Find me in app/views/beers/new.html.erb</p>
+<h1>Create your new beer here!</h1>
+
+<%= form_for :beer , url: beers_path, method: :post do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </p>
+    <p>
+    <%= f.label :occasion %><br>
+    <%= f.text_field :occasion %>
+  </p>
+
+  <p>
+    <%= f.label :appearance %><br>
+    <%= f.text_area :appearance %>
+  </p>
+
+    <p>
+    <%= f.label :aroma %><br>
+    <%= f.text_area :aroma %>
+  </p>
+
+  <p>
+    <%= f.label :palateflavour %><br>
+    <%= f.text_area :palateflavour %>
+  </p>
+
+  <p>
+    <%= f.label :flavour %><br>
+    <%= f.text_area :flavour %>
+  </p>
+
+  <p>
+    <%= f.label :appearance %><br>
+    <%= f.text_area :appearance %>
+  </p>
+
+  <p>
+    <%= f.label :final_score %><br>
+    <%= f.text_area :final_score %>
+  </p>
+
+  <%= f.hidden_field :user_id, :value => session[:id] %>
+
+  <p>
+    <%= f.submit "Create this beer" %>
+  </p>
+<% end %>
+
+

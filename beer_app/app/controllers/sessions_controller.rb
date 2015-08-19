@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
+  include ApplicationHelper
+
   def new
 
   end
 
   def create
-    @user = User.find_by(email: params[:session][:email]).try(:authenticate, params[:session][:password])
+    current_user
     #FL: check out authenticate
-    if @user
+    if current_user
       p "User Log in"
       session[:id] = @user.id
       redirect_to beers_path
