@@ -9,11 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @article = Article.new(params[:article])
+    p params[:user]
+    @user = User.new(user_params)
 
-    @article.save
-    redirect_to @article
-    # ...I am at this point!
+    @user.save
+    redirect_to root_path
   end
 
   def update
@@ -21,7 +21,14 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :hometown, :country)
+  end
 end
+
+
 
 # # test user:
 # # admin
