@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   end
 
   def create
+    @article = Article.new(params[:article])
+
+    @article.save
+    redirect_to @article
+    # ...I am at this point!
   end
 
   def update
