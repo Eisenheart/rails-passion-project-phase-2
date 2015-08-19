@@ -14,6 +14,7 @@ class BeersController < ApplicationController
   end
 
   def edit
+    @beer = Beer.find(params[:id])
   end
 
   def create
