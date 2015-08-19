@@ -1,2 +1,54 @@
-<h1>Beers#edit</h1>
+<h1>Edit Beer Here</h1>
 <p>Find me in app/views/beers/edit.html.erb</p>
+
+
+<%= form_for :beer , url: beer_path(params[:id]), method: :put do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :value => "#{@beer.name}"%>
+  </p>
+  <p>
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </p>
+    <p>
+    <%= f.label :occasion %><br>
+    <%= f.text_field :occasion %>
+  </p>
+
+  <p>
+    <%= f.label :appearance %><br>
+    <%= f.text_area :appearance %>
+  </p>
+
+    <p>
+    <%= f.label :aroma %><br>
+    <%= f.text_area :aroma %>
+  </p>
+
+  <p>
+    <%= f.label :palate %><br>
+    <%= f.text_area :palate %>
+  </p>
+
+  <p>
+    <%= f.label :flavour %><br>
+    <%= f.text_area :flavour %>
+  </p>
+
+  <p>
+    <%= f.label :appearance %><br>
+    <%= f.text_area :appearance %>
+  </p>
+
+  <p>
+    <%= f.label :final_score %><br>
+    <%= f.text_area :final_score %>
+  </p>
+
+  <%= f.hidden_field :user_id, :value => session[:id] %>
+
+  <p>
+    <%= f.submit "Edit this beer" %>
+  </p>
+<% end %>

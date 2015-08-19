@@ -9,29 +9,37 @@
 <h1 class="list_text">Welcome <%= @user.name%>!</h1>
 <!-- needs to be filtered to user beers, probably in get route: -->
 <% @beers.each do |beer| %></p>
-<p class="list_text"><%= beer.name %>,<%= beer.link %>,<%= beer.final_score %>
+<p class="list_text"><%= beer.name %>, <%=link_to "#{beer.link}", "http://#{beer.link}"%> ,<%= beer.final_score %>
 </p>
 
 <!-- use class="pure-form button" for pure css -->
+
+
+
 <!-- delete a beer -->
-<br>
+
 <%= button_to "delete a beer", new_session_path %>
-</br>
+
 
 <!-- edit a beer -->
-<br>
-<%= button_to "edit a beer", new_session_path %>
-</br>
+
+<%= link_to "edit a beer", edit_beer_path(beer.id) %>
 
 <% end %>
 
+
 <!-- add a beer -->
 <br>
-<%= button_to "add a beer", new_session_path %>
+<br>
+<br>
+<br>
+
+<%= link_to "add a beer", new_beer_path %>
 </br>
 
 <!-- edit a user -->
 <br>
 <%= button_to "edit a user", new_session_path %>
 </br>
+
 
