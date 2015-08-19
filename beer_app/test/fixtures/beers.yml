@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  link: MyString
+  occasion: MyString
+  appearance: 1
+  aroma: 1
+  palate: 1
+  flavour: 1
+  final_score: 1
+  user_id: 
+
+two:
+  name: MyString
+  link: MyString
+  occasion: MyString
+  appearance: 1
+  aroma: 1
+  palate: 1
+  flavour: 1
+  final_score: 1
+  user_id: 
