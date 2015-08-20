@@ -18,8 +18,8 @@
 
 <!-- delete a beer -->
 
-<%= button_to "delete a beer", new_session_path %>
 
+<%= button_to "delete", beer_path(:id => beer.id), :method => :delete %>
 
 <!-- edit a beer -->
 
@@ -30,16 +30,14 @@
 
 <!-- add a beer -->
 <br>
-<br>
-<br>
-<br>
+
 
 <%= link_to "add a beer", new_beer_path %>
 </br>
 
 <!-- edit a user -->
 <br>
-<%= button_to "edit a user", new_session_path %>
+<%= link_to "edit a user", edit_user_path(@user.id) %>
 </br>
 
 

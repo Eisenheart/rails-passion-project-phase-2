@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   def show
+
   end
 
   def new
   end
 
   def edit
+
   end
 
   def create
@@ -17,6 +19,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update(user_params_update)
+    @user.save
+    redirect_to user_path
+    #do not think that this works
   end
 
   def destroy
@@ -26,6 +33,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :hometown, :country)
   end
+
+    def user_params_update
+    params.permit(:name, :email, :hometown, :country)
+  end
+
 end
 
 

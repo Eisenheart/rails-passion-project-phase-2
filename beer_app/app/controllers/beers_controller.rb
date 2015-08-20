@@ -34,5 +34,8 @@ class BeersController < ApplicationController
   end
 
   def destroy
+    Beer.find(params[:id]).destroy
+    redirect_to beers_path
+# is not working
   end
 end
